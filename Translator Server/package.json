@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "build": "npm install",
+        "all": "node server.js"
+    },
+    "dependencies": {
+        "google-translate-api": "^2.3.0"
+    }
+}

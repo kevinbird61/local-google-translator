@@ -3,6 +3,10 @@ Translator/debug/
 Translator/release/
 Translator/*.o
 
+# ignore node_modules
+Translator\ Server/node_modules/
+Translator\ Server/package-lock.json
+
 # Ignore useless file
 Makefile*
 .qmake.stash
