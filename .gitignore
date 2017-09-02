@@ -1,0 +1,10 @@
+# ignore debug/release directory,all object file 
+Translator/debug/
+Translator/release/
+Translator/*.o
+
+# Ignore useless file
+Makefile*
+.qmake.stash
+*.pro.user
+ui_mainwindow.h
