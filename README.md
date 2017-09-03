@@ -7,9 +7,9 @@ Self-used translator, a good tool with reading paper.
 
 # About 
 * Translator
-  * Build with Qt5.9.1
+  * Build with Qt5.9.1.
   * An translator that always on the top layer of windows.
-  * Come in handy when you reading some non-native language paper.
+  * Come in handy when you reading some non-native language paper.
 
 * Translator Server
   * Build with nodejs in version 8.1.2
@@ -20,7 +20,7 @@ Self-used translator, a good tool with reading paper.
 # Language support
 * Now support anything translate to:
   * `English`
-  * `Tradional Chinese
-  
+  * `Traditional Chinese`
+  
 # Author
 * Kevin Cyu, kevinbird61@gmail.com
