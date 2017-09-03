@@ -21,6 +21,8 @@ class translator : public QObject
 public:
     translator(QObject *parent = 0);
     void makeTrans(QString s_to, QString s_query);
+    QString getServerUrl();
+    void setServerUrl(QString newUrl);
 
 public slots:
     void getReply(QNetworkReply *reply);
@@ -30,6 +32,7 @@ signals:
 
 private:
     QNetworkAccessManager manager;
+    QString serverUrl;
 };
 
 #endif // TRANSLATOR_H

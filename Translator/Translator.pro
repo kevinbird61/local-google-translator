@@ -26,14 +26,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    translator.cpp
+    translator.cpp \
+    configbox.cpp
 
 HEADERS += \
         mainwindow.h \
-    translator.h
+    translator.h \
+    configbox.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    configbox.ui
 
 DISTFILES +=
 

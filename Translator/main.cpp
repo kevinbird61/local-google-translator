@@ -10,6 +10,5 @@ int main(int argc, char *argv[])
     Qt::WindowFlags flags = w.windowFlags();
     w.setWindowFlags(flags | Qt::WindowStaysOnTopHint);
     w.show();
-
     return a.exec();
 }

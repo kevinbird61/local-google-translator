@@ -12,3 +12,4 @@ Makefile*
 .qmake.stash
 *.pro.user
 ui_mainwindow.h
+ui_configbox.h
