@@ -1,7 +1,9 @@
 # Cyu-Translator
 Self-used translator, a good tool with reading paper.
 
-![](https://i.imgur.com/GH4jDX1.png)
+<p align="center"> 
+<img src="https://i.imgur.com/IIF8bqU.gif">
+</p>
 
 # About 
 * Translator
