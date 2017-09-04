@@ -62,7 +62,7 @@ void MainWindow::showAbout()
 {
     QMessageBox::information(this, tr("關於我(About me)"),
                            tr("Kevin Cyu, kevinbird61@gmail.com\n"
-                              "© 2017 Copyright by Kevin CYU"),
+                              "© 2017 Copyright by Kevin Cyu"),
                            QMessageBox::Ok | QMessageBox::Cancel,
                              QMessageBox::Ok);
 }

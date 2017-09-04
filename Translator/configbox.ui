@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>721</width>
-    <height>235</height>
+    <height>332</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -116,6 +116,35 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="updateBtn">
       <property name="text">
        <string>更新(update)</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>230</y>
+     <width>701</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>自行建立服務</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="readmeBtn">
+      <property name="text">
+       <string>說明(Readme)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="setupBtn">
+      <property name="text">
+       <string>啟動 local 端服務</string>
       </property>
      </widget>
     </item>
