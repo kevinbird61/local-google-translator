@@ -41,4 +41,5 @@ FORMS += \
 DISTFILES +=
 
 RESOURCES += \
-    images.qrc
+    images.qrc \
+    font.qrc
