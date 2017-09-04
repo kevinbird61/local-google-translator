@@ -1,13 +1,20 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QFontDatabase>
+#include <QSysInfo>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     // Setting font
-    QFontDatabase::addApplicationFont(":notosans");
-    qApp->setFont(QFont("notosans",14,QFont::Normal,false));
+    qDebug() << QSysInfo::productType();
+    if(QSysInfo::productType() == "windows"){
+        QFontDatabase::addApplicationFont(":notosans");
+    }
+    else{
+        QFontDatabase::addApplicationFont("font/setofont.ttf");
+    }
+    qApp->setFont(QFont("cyu",14,QFont::Normal,false));
     // Mainwindow
     MainWindow w;
     w.setWindowIcon(QIcon(":icon"));
