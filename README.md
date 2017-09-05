@@ -1,9 +1,15 @@
-# Cyu-Translator
+# Cyu-Translator 
+[![GitHub release](https://img.shields.io/badge/release-v0.0.1-blue.svg?style=plastic)]()
+
 Self-used translator, a good tool with reading paper.
 
 <p align="center"> 
 <img src="https://i.imgur.com/IIF8bqU.gif">
 </p>
+
+# Release - v0.0.1
+* Linux/ubuntu(16.04)
+  * `Release/Translator-linux.tar.gz`: extract and execute `./Translator`.(Dependency: `font/` directory)
 
 # About 
 * Translator
@@ -20,7 +26,7 @@ Self-used translator, a good tool with reading paper.
 # Language support
 * Now support anything translate to:
   * `English`
-  * `Traditional Chinese`
+  * `Traditional Chinese`
   
 # Author
 * Kevin Cyu, kevinbird61@gmail.com
