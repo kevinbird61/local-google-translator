@@ -27,16 +27,19 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     translator.cpp \
-    configbox.cpp
+    configbox.cpp \
+    historybox.cpp
 
 HEADERS += \
         mainwindow.h \
     translator.h \
-    configbox.h
+    configbox.h \
+    historybox.h
 
 FORMS += \
         mainwindow.ui \
-    configbox.ui
+    configbox.ui \
+    historybox.ui
 
 DISTFILES +=
 

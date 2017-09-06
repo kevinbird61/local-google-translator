@@ -13,3 +13,5 @@ Makefile*
 *.pro.user
 ui_mainwindow.h
 ui_configbox.h
+ui_historybox.h
+object*

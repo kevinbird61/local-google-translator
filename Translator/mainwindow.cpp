@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     config_window = new configBox(parent);
     config_window->hide();
+    hisbox = new historybox(parent);
+    hisbox->hide();
     translator_man = new translator();
     // set connect with translator
     QObject::connect(translator_man,SIGNAL(getTrans(QNetworkReply*)),this,SLOT(getTrans(QNetworkReply*)));
@@ -20,6 +22,10 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(config_window,SIGNAL(fetchClient(int)),this,SLOT(matcher(int)));
     QObject::connect(this,SIGNAL(sendUrl(QString)),config_window,SLOT(fillCurrent(QString)));
     QObject::connect(config_window,SIGNAL(updateClient(QString)),this,SLOT(changeUrl(QString)));
+    // set connect with history box
+    QObject::connect(ui->historyBtn,SIGNAL(clicked(bool)),this,SLOT(showHistory()));
+    QObject::connect(this,SIGNAL(sendWord2His(QString)),hisbox,SLOT(addHistoryItem(QString)));
+    QObject::connect(hisbox,SIGNAL(choosefromHis(QString)),SLOT(fillQuery(QString)));
 }
 
 MainWindow::~MainWindow()
@@ -30,11 +36,15 @@ MainWindow::~MainWindow()
 void MainWindow::trans2Cht(bool flags)
 {
     translator_man->makeTrans(QString("zh-TW"),QString(ui->TransEdit->toPlainText()));
+    // And then add to history
+    emit sendWord2His(QString(ui->TransEdit->toPlainText()));
 }
 
 void MainWindow::trans2Eng(bool flags)
 {
     translator_man->makeTrans(QString("en"),QString(ui->TransEdit->toPlainText()));
+    // And then add to history
+    emit sendWord2His(QString(ui->TransEdit->toPlainText()));
 }
 
 void MainWindow::getTrans(QNetworkReply *reply)
@@ -56,6 +66,18 @@ void MainWindow::showConfigbox()
     config_window->show();
     // emit first
     emit sendUrl(translator_man->getServerUrl());
+}
+
+void MainWindow::showHistory()
+{
+    Qt::WindowFlags flags = hisbox->windowFlags();
+    hisbox->setWindowFlags( flags | Qt::WindowStaysOnTopHint);
+    hisbox->show();
+}
+
+void MainWindow::showBookmark()
+{
+
 }
 
 void MainWindow::showAbout()
@@ -80,4 +102,9 @@ void MainWindow::changeUrl(QString newUrl)
 {
     qDebug() << "Get new url:" << newUrl;
     translator_man->setServerUrl(newUrl);
+}
+
+void MainWindow::fillQuery(QString query)
+{
+    ui->TransEdit->setText(query);
 }
