@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
     config_window->hide();
     hisbox = new historybox(parent);
     hisbox->hide();
+    bmbox = new bookmarkbox(parent);
+    bmbox->hide();
     translator_man = new translator();
     // set connect with translator
     QObject::connect(translator_man,SIGNAL(getTrans(QNetworkReply*)),this,SLOT(getTrans(QNetworkReply*)));
@@ -25,7 +27,12 @@ MainWindow::MainWindow(QWidget *parent) :
     // set connect with history box
     QObject::connect(ui->historyBtn,SIGNAL(clicked(bool)),this,SLOT(showHistory()));
     QObject::connect(this,SIGNAL(sendWord2His(QString)),hisbox,SLOT(addHistoryItem(QString)));
-    QObject::connect(hisbox,SIGNAL(choosefromHis(QString)),SLOT(fillQuery(QString)));
+    QObject::connect(hisbox,SIGNAL(choosefromHis(QString)),this,SLOT(fillQuery(QString)));
+    // set connect with bookmark box
+    QObject::connect(ui->bookmarkBtn,SIGNAL(clicked(bool)),this,SLOT(showBookmark()));
+    QObject::connect(bmbox,SIGNAL(chooseFromBmk(QString)),this,SLOT(fillQuery(QString)));
+    // connection between different component
+    QObject::connect(hisbox,SIGNAL(choosefromHis(QString)),bmbox,SLOT(saveFromhis(QString)));;
 }
 
 MainWindow::~MainWindow()
@@ -77,7 +84,10 @@ void MainWindow::showHistory()
 
 void MainWindow::showBookmark()
 {
-
+    Qt::WindowFlags flags = bmbox->windowFlags();
+    bmbox->setWindowFlags( flags | Qt::WindowStaysOnTopHint);
+    bmbox->refresh(); // refresh with its model
+    bmbox->show();
 }
 
 void MainWindow::showAbout()

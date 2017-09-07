@@ -14,4 +14,8 @@ Makefile*
 ui_mainwindow.h
 ui_configbox.h
 ui_historybox.h
+ui_bookmarkbox.h
 object*
+
+# Test file
+Translator/bookmark.bmk

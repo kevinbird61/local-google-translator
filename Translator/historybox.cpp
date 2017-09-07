@@ -31,11 +31,11 @@ void historybox::updateView(QStringList newlist)
 
 void historybox::addbookMark()
 {
-    QMessageBox::information(this, tr("尚未支援!"),
+    /* QMessageBox::information(this, tr("尚未支援!"),
                            tr("敬請期待書籤功能!\n"),
                            QMessageBox::Ok | QMessageBox::Cancel,
-                             QMessageBox::Ok);
-    // qDebug() << ui->hisView->selectionModel()->selectedIndexes().first().data(Qt::DisplayRole).toString();
+                             QMessageBox::Ok);*/
+    emit choosefromHis(ui->hisView->selectionModel()->selectedIndexes().first().data(Qt::DisplayRole).toString());
 }
 
 void historybox::showHow2do()

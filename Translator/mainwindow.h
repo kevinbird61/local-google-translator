@@ -7,6 +7,7 @@
 #include "translator.h"
 #include "configbox.h"
 #include "historybox.h"
+#include "bookmarkbox.h"
 
 namespace Ui {
 class MainWindow;
@@ -44,6 +45,7 @@ private:
     configBox *config_window;
     translator *translator_man;
     historybox *hisbox;
+    bookmarkbox *bmbox;
 };
 
 #endif // MAINWINDOW_H
