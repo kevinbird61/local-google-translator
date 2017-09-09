@@ -85,16 +85,12 @@ p, li { white-space: pre-wrap; }
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <widget class="QPushButton" name="EngBtn">
-            <property name="text">
-             <string>English</string>
-            </property>
-           </widget>
+           <widget class="QComboBox" name="LangCombobox"/>
           </item>
           <item>
-           <widget class="QPushButton" name="ChtBtn">
+           <widget class="QPushButton" name="TransBtn">
             <property name="text">
-             <string>繁體中文</string>
+             <string>翻譯</string>
             </property>
            </widget>
           </item>

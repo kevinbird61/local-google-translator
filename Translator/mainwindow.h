@@ -26,8 +26,7 @@ signals:
     void sendWord2His(QString source); // record history
 
 public slots:
-    void trans2Cht(bool flags); // translate left side to chinese
-    void trans2Eng(bool flags); // translate left side to english
+    void translate(); // translate anything, which depend on ui->LanguageCombobox
     void getTrans(QNetworkReply *reply);
     // menu bar
     void showAbout();

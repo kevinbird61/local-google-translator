@@ -13,12 +13,20 @@ MainWindow::MainWindow(QWidget *parent) :
     bmbox = new bookmarkbox(parent);
     bmbox->hide();
     translator_man = new translator();
+    // Setting supported language. Format: ( "Display Name", "Attribute" )
+    ui->LangCombobox->addItem("English",QVariant("en"));
+    ui->LangCombobox->addItem("Français",QVariant("fr"));
+    ui->LangCombobox->addItem("Deutsch",QVariant("de"));
+    ui->LangCombobox->addItem("Español",QVariant("es"));
+    ui->LangCombobox->addItem("日本語",QVariant("ja"));
+    ui->LangCombobox->addItem("简体中文",QVariant("zh-CN"));
+    ui->LangCombobox->addItem("繁體中文",QVariant("zh-TW"));
+
     // set connect with translator
     QObject::connect(translator_man,SIGNAL(getTrans(QNetworkReply*)),this,SLOT(getTrans(QNetworkReply*)));
     // set connect with itself
-    QObject::connect(ui->ChtBtn,SIGNAL(clicked(bool)),this,SLOT(trans2Cht(bool)));
-    QObject::connect(ui->EngBtn,SIGNAL(clicked(bool)),this,SLOT(trans2Eng(bool)));
     QObject::connect(ui->aboutBtn,SIGNAL(clicked(bool)),this,SLOT(showAbout()));
+    QObject::connect(ui->TransBtn,SIGNAL(clicked(bool)),this,SLOT(translate()));
     // set connect with config box
     QObject::connect(ui->editconnBtn,SIGNAL(clicked(bool)),this,SLOT(showConfigbox()));
     QObject::connect(config_window,SIGNAL(fetchClient(int)),this,SLOT(matcher(int)));
@@ -40,16 +48,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::trans2Cht(bool flags)
+void MainWindow::translate()
 {
-    translator_man->makeTrans(QString("zh-TW"),QString(ui->TransEdit->toPlainText()));
-    // And then add to history
-    emit sendWord2His(QString(ui->TransEdit->toPlainText()));
-}
-
-void MainWindow::trans2Eng(bool flags)
-{
-    translator_man->makeTrans(QString("en"),QString(ui->TransEdit->toPlainText()));
+    // qDebug() << ui->LangCombobox->currentData(Qt::DisplayRole).toString(); // get name of it
+    qDebug() << ui->LangCombobox->currentData().toString(); // get attribute of it
+    // And then using translator man
+    translator_man->makeTrans(ui->LangCombobox->currentData().toString(),QString(ui->TransEdit->toPlainText()));
     // And then add to history
     emit sendWord2His(QString(ui->TransEdit->toPlainText()));
 }
