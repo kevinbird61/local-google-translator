@@ -8,10 +8,8 @@ Self-used translator, a good tool with reading paper.
 </p>
 
 # Release - v0.0.2
-* Linux/ubuntu(16.04)
-  * `Release/Translator-linux-v0.0.2.tar.gz`: extract and execute `./Translator`.(Dependency: `font/` directory)
-* Windows
-  * `Release/Translator-windowv0.0.2-1.zip` : extract and execute `Translator.exe`.
+* [Home Page](https://kevin.imslab.org:8443/#side-pj-cyutran)
+  * `Window` & `Linux` download link are available!
 
 # About 
 * Translator
